@@ -1,0 +1,56 @@
+@use './colors' as colors;
+
+hr {
+	height: 10px;
+	width: 25%;
+	background-color: colors.$main-color;
+	margin: 0 auto;
+	margin-bottom: 1em;
+	border: none;
+}
+
+.section-padding {
+	padding: 50px 1em;
+}
+.white-section {
+	background-color: colors.$white;
+}
+.section-heading {
+	// width: 100%;
+	padding: 0.5em 0;
+	color: colors.$heading-color;
+	font-size: 3rem;
+	text-transform: uppercase;
+	text-align: center;
+	&--white {
+		color: colors.$white;
+	}
+}
+
+.item-heading {
+	color: colors.$heading-color;
+	text-transform: uppercase;
+	font-size: 2rem;
+}
+
+.section-text {
+	padding: 0 1.5em;
+	text-align: center;
+	font-size: 1.4rem;
+}
+
+.item-logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 60px;
+	height: 60px;
+	border-radius: 100px;
+	border: 1px solid #fff;
+	box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.1);
+	font-size: 2rem;
+}

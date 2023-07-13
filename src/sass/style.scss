@@ -1,0 +1,621 @@
+@use './colors' as colors;
+@use './components' as components;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	position: relative;
+	font-size: 1.6rem;
+	font-family: 'Roboto Mono', monospace;
+	background-color: colors.$body-color;
+	line-height: 1.5;
+	height: 200vh;
+	color: colors.$body-text;
+}
+
+.wrapper {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.nav {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	padding: 10px 0;
+	background-color: colors.$menu-color;
+	z-index: 100;
+
+	&__box {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 50px;
+		padding: 0 1em;
+	}
+	&__logo {
+		display: flex;
+
+		height: 100%;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__logo-item {
+		color: #e9c46a;
+		text-transform: uppercase;
+		font-size: 2.5rem;
+		font-weight: bold;
+		font-family: 'Dancing Script', cursive;
+	}
+
+	&__items {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		width: 100%;
+		background-color: colors.$menu-color;
+		transform: translateX(100%);
+		transition: 0.5s;
+		z-index: 1;
+		&--active {
+			transform: translateX(0);
+		}
+	}
+	&__item {
+		padding: 0.5em 0;
+		margin-bottom: 0.2em;
+		width: 100%;
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 2.5rem;
+		text-decoration: none;
+		color: colors.$white;
+		&:hover {
+			background-color: colors.$main-color;
+		}
+	}
+	.burger-btn {
+		padding: 1em;
+		background: none;
+		border: 1px solid transparent;
+		cursor: pointer;
+		z-index: 1000;
+		&:hover {
+			.burger-btn__bars::after,
+			.burger-btn__bars::before {
+				width: 100%;
+			}
+		}
+		&__box {
+			position: relative;
+			width: 40px;
+			height: 30px;
+		}
+		&__bars,
+		&__bars::before,
+		&__bars::after {
+			position: absolute;
+			right: 0;
+			height: 3px;
+			content: '';
+			transition: width 0.3s;
+			background-color: colors.$white;
+		}
+		&__bars {
+			width: 100%;
+			&::after {
+				top: 13px;
+				width: 60%;
+			}
+			&::before {
+				top: 27px;
+				width: 30%;
+			}
+		}
+	}
+}
+
+.header {
+	position: relative;
+	display: flex;
+	height: 100vh;
+	background-image: url('https://bestwpware.com/html/tm/fz-preview/fz/assets/img/bg/static-bg.jpg');
+	background-size: cover;
+	background-position: center;
+	text-align: center;
+	color: colors.$white;
+	&__box {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		padding: 0 1em;
+		z-index: 1;
+	}
+	&__heading {
+		font-size: 4.5rem;
+		font-weight: 700;
+		font-family: 'Montserrat', sans-serif;
+		text-transform: uppercase;
+		margin-bottom: 0.2em;
+	}
+
+	&__bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+	&__btn {
+		background: none;
+		border: none;
+		background-color: colors.$main-color;
+		border-radius: 100px;
+		padding: 1em 1.8em;
+		margin-top: 1em;
+		font-size: 1.3rem;
+		letter-spacing: 2px;
+		color: colors.$white;
+		text-transform: uppercase;
+		font-family: 'Roboto Mono', monospace;
+	}
+}
+
+.services {
+	&__items-box {
+		margin: 5em 0 0;
+	}
+
+	&__item {
+		position: relative;
+		padding: 3em 0.8em;
+		margin-top: 3em;
+		background-color: colors.$white;
+		text-align: center;
+	}
+
+	&__item-heading {
+		padding: 1em 0;
+	}
+
+	&__item-text {
+		font-size: 1.5rem;
+	}
+
+	&__item-logo {
+		background-color: white;
+		color: colors.$main-color;
+	}
+}
+
+.whychoose {
+	position: relative;
+	background-image: url('https://bestwpware.com/html/tm/fz-preview/fz/assets/img/bg/service-bg.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+
+	.wrapper {
+		position: relative;
+
+		z-index: 1;
+	}
+
+	&__items-box {
+		margin: 5em 0 0;
+	}
+
+	&__text {
+		color: colors.$white;
+	}
+
+	&__item {
+		position: relative;
+		padding: 2em 0.8em;
+		margin-top: 3em;
+		background-color: colors.$white;
+		text-align: center;
+	}
+
+	&__item-heading {
+		padding: 0.5em 0;
+		font-weight: 500;
+	}
+
+	&__item-text {
+		font-size: 1.5rem;
+	}
+
+	&__item-logo {
+		background-color: colors.$main-color;
+		color: white;
+		border: 1px solid colors.$main-color;
+	}
+
+	&__bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: rgba(0, 0, 0, 0)
+			linear-gradient(rgba(34, 38, 75, 0.4), rgba(34, 38, 75, 0.5)) repeat
+			scroll 0 0;
+		z-index: 0;
+	}
+}
+
+.package {
+	&__slider-box {
+		margin-top: 1.5em;
+	}
+	&__img {
+		position: relative;
+		width: 100%;
+		height: 300px;
+		background-image: url('https://bestwpware.com/html/tm/fz-preview/fz/assets/img/package/1.jpg');
+		background-position: center;
+		background-size: cover;
+		overflow: hidden;
+		&:hover .package__box {
+			top: 20%;
+		}
+	}
+
+	&__box {
+		position: absolute;
+		top: calc(100% - 4em);
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		text-align: center;
+		width: 100%;
+		height: 100%;
+		padding: 0.5em 0;
+		background-color: colors.$main-color;
+		color: colors.$white;
+		transition: 0.5s top;
+		&:hover {
+			top: 20%;
+		}
+	}
+
+	&__img-text {
+		padding: 0 1em;
+	}
+
+	&__img-title {
+		font-size: 2rem;
+		padding: 0.5em 0;
+	}
+
+	&__stars-box {
+		padding: 0.8em 0;
+	}
+
+	&__btn {
+		width: 80%;
+		padding: 1em 0;
+		background: none;
+		border: none;
+		background-color: colors.$white;
+		text-transform: uppercase;
+	}
+}
+
+.top_deals {
+	&__text {
+		margin-bottom: 2em;
+	}
+
+	&__item {
+		position: relative;
+		width: 100%;
+		height: 250px;
+		transition: 1s;
+		&:hover .top_deals__item-text {
+			opacity: 1;
+		}
+
+		img {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+	&__item-text {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		padding: 3em 0 2em;
+		background-color: rgba(0, 0, 0, 0.4);
+		// z-index: -1;
+		opacity: 0;
+		transition: 0.5s;
+	}
+
+	&__item-heading {
+		background-color: colors.$white;
+		padding: 0.8em 0.5em;
+		text-transform: uppercase;
+		font-size: 1.8rem;
+	}
+
+	&__item-link {
+		text-transform: uppercase;
+		text-decoration: none;
+		color: colors.$white;
+		font-size: 2rem;
+		font-weight: bold;
+	}
+}
+
+.footer {
+	padding: 2em 1em;
+
+	&__text {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 1.5rem;
+		text-align: center;
+	}
+}
+
+@media (min-width: 576px) {
+	.section-heading {
+		font-size: 4rem;
+	}
+
+	.item-heading {
+		font-size: 2.2rem;
+	}
+
+	.section-text {
+		font-size: 1.7rem;
+	}
+
+	.header {
+		&__heading {
+			font-size: 7rem;
+			line-height: 1.2;
+		}
+	}
+
+	.services {
+		&__items-box {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+
+		&__item {
+			width: 45%;
+		}
+	}
+
+	.whychoose {
+		&__items-box {
+			display: flex;
+			justify-content: space-around;
+			margin: 2em 0 0;
+		}
+
+		&__item {
+			width: 30%;
+		}
+	}
+
+	.top_deals {
+		&__text {
+			margin-bottom: 2em;
+		}
+
+		&__box {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		&__item {
+			width: 50%;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.nav {
+		&__box {
+			justify-content: space-between;
+		}
+		&__items {
+			position: relative;
+			flex-direction: row;
+			justify-content: flex-end;
+			height: 100%;
+			width: 100%;
+			transform: translateX(0);
+		}
+		&__item {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 0;
+			margin-bottom: 0rem;
+			width: 20%;
+			height: 100%;
+			font-size: 1.5rem;
+		}
+		.burger-btn {
+			display: none;
+		}
+	}
+
+	.section-heading {
+		font-size: 4.5rem;
+	}
+
+	.item-heading {
+		font-size: 2.2rem;
+	}
+
+	.section-text {
+		font-size: 1.8rem;
+	}
+
+	.header {
+		&__btn {
+			padding: 1.2em 2em;
+			margin-top: 1em;
+			font-size: 1.4rem;
+		}
+	}
+
+	.package {
+		&__slider-box {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 1.5em;
+		}
+		&__img {
+			position: relative;
+			width: 50%;
+			height: 300px;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.nav {
+		&__items {
+			width: 70%;
+		}
+		&__item {
+			font-size: 1.6rem;
+		}
+	}
+	.header {
+		&__text {
+			font-size: 1.8rem;
+			width: 60%;
+		}
+	}
+
+	.services {
+		&__item {
+			width: 30%;
+		}
+	}
+
+	.whychoose {
+		&__item {
+			width: 30%;
+		}
+	}
+
+	.top_deals {
+		&__text {
+			margin-bottom: 2em;
+		}
+
+		&__box {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		&__item {
+			width: 50%;
+		}
+	}
+}
+
+@media (min-width:1200px){
+	.section-heading {
+		font-size: 4rem;
+	}
+
+	.item-heading {
+		font-size: 2.5rem;
+	}
+
+	.section-text {
+		font-size: 2rem;
+	}
+
+	.header {
+		&__heading {
+			font-size: 9rem;
+			width: 80%;
+		}
+	}
+
+	.services {
+		&__items-box {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+
+		&__item-text{
+			font-size: 1.6rem;
+		}
+	}
+
+	.whychoose {
+
+		&__item-text{
+			font-size: 1.6rem;
+		}
+	}
+
+	.top_deals {
+		&__text {
+			margin-bottom: 2em;
+		}
+
+		&__box {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		&__item {
+			height: 400px;
+			width: calc(100%/3);
+		}
+	}
+}

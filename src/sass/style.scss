@@ -45,7 +45,8 @@ body {
 	}
 	&__logo {
 		display: flex;
-
+		width: 40%;
+		max-width: 150px;
 		height: 100%;
 
 		img {

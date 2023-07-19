@@ -140,9 +140,9 @@ body {
 	position: relative;
 	display: flex;
 	height: 100vh;
-	background-image: url('https://bestwpware.com/html/tm/fz-preview/fz/assets/img/bg/static-bg.jpg');
+	background-image: url('../img/header_640.jpg');
 	background-size: cover;
-	background-position: center;
+	background-position: bottom;
 	text-align: center;
 	color: colors.$white;
 	&__box {
@@ -397,6 +397,39 @@ body {
 	}
 }
 
+
+// STRONA PRODUKTU
+
+
+
+.header-offers {
+	height: 70vh;
+}
+
+.details {
+	
+	&__option {
+
+		img {
+			width: 100%;
+			height: 300px;
+			object-fit: cover;
+		}
+	}
+	&__option-heading {
+		margin: 1em 0 .5em;
+		padding: 0;
+		text-align: center;
+		font-size: 2.5rem;
+	}
+
+	&__option-text {
+		text-align: center;
+		font-size: 1.6rem;;
+		margin-bottom: 1em;
+	}
+}
+
 @media (min-width: 576px) {
 	.section-heading {
 		font-size: 4rem;
@@ -455,6 +488,12 @@ body {
 			width: 50%;
 		}
 	}
+
+	.details {
+		&__option-heading {
+			font-size: 2.5rem;
+		}
+	}
 }
 
 @media (min-width: 768px) {
@@ -498,6 +537,7 @@ body {
 	}
 
 	.header {
+		background-image: url('../img/header_1920.jpg');
 		&__btn {
 			padding: 1.2em 2em;
 			margin-top: 1em;
@@ -516,6 +556,25 @@ body {
 			position: relative;
 			width: 50%;
 			height: 300px;
+		}
+	}
+	.details {
+		&__option {
+			display: flex;
+		}
+
+		&__img-box{
+			width: 50%;
+
+			img{
+				height: 100%;
+			}
+
+		}
+
+		&__option-text {
+			padding: 0 0.8em;
+			width: 50%;
 		}
 	}
 }
@@ -562,9 +621,16 @@ body {
 			width: 50%;
 		}
 	}
+	.details {
+		&__option {
+			img {
+				height: 80%;
+			}
+		}
+	}
 }
 
-@media (min-width:1200px){
+@media (min-width: 1200px) {
 	.section-heading {
 		font-size: 4rem;
 	}
@@ -591,14 +657,13 @@ body {
 			justify-content: space-around;
 		}
 
-		&__item-text{
+		&__item-text {
 			font-size: 1.6rem;
 		}
 	}
 
 	.whychoose {
-
-		&__item-text{
+		&__item-text {
 			font-size: 1.6rem;
 		}
 	}
@@ -616,7 +681,7 @@ body {
 
 		&__item {
 			height: 400px;
-			width: calc(100%/3);
+			width: calc(100% / 3);
 		}
 	}
 }

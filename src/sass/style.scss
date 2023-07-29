@@ -681,6 +681,9 @@ body {
 			justify-content: space-between;
 			width: calc(100%/3);
 		}
+		&__temperature, &__humidity{
+			flex-grow: 1;
+		}
 	}
 }
 

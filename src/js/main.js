@@ -35,20 +35,20 @@ const getWeather = () => {
 		weatherHumidity.textContent = humidity + '%'
 
 		if(idStatus >= 200 && idStatus <= 232){
-         weatherImg.setAttribute('src', '../dist/img/thunderstorm.png')
+         weatherImg.setAttribute('src', './dist/img/thunderstorm.png')
       } else if(idStatus >= 300 && idStatus <= 321){
-         weatherImg.setAttribute('src', '../dist/img/rain.png')
+         weatherImg.setAttribute('src', './dist/img/rain.png')
       } else if(idStatus >= 500 && idStatus <= 531){
-         weatherImg.setAttribute('src', '../dist/img/rain.png')
+         weatherImg.setAttribute('src', './dist/img/rain.png')
       } else if(idStatus >= 600 && idStatus <= 622){
-         weatherImg.setAttribute('src', '../dist/img/snow.png')
+         weatherImg.setAttribute('src', './dist/img/snow.png')
          console.log('ok');
       } else if(idStatus === 800){
-         weatherImg.setAttribute('src', '../dist/img/sun.png')
+         weatherImg.setAttribute('src', './dist/img/sun.png')
          console.log('ok');
       } 
 		else if(idStatus >= 801 && idStatus <= 804){
-         weatherImg.setAttribute('src', '../dist/img/clouds.png')
+         weatherImg.setAttribute('src', './dist/img/clouds.png')
          console.log('ok');
       } 
 	})

@@ -218,6 +218,66 @@ body {
 	}
 }
 
+.weather{
+	&__box{
+		display: flex;
+		flex-direction: column;
+
+
+
+	}
+	&__temperature-box{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 1.5em 0;
+
+	}
+	&__temperature{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 4rem;
+	}
+	&__img-box{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+
+	}
+	&__img{
+		width: 30%;
+		object-fit: contain;
+
+		
+	}
+	&__humidity-box{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		
+	}
+
+	&__humidity{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 4rem;
+
+	}
+
+	&__text{
+		text-transform: uppercase;
+		font-size: 2rem;
+		margin-bottom: .5em;
+	}
+	
+}
+
 .whychoose {
 	position: relative;
 	background-image: url('../img/city-gef4b1c177_640.jpg');
@@ -505,6 +565,15 @@ body {
 			font-size: 2.5rem;
 		}
 	}
+	.weather{
+		&__text{
+			font-size: 3rem;
+
+		}
+		&__temperature, &__humidity{
+			font-size: 6rem;
+		}
+	}
 }
 
 @media (min-width: 768px) {
@@ -591,6 +660,28 @@ body {
 	.whychoose {
 		background-image: url('../img/city-gb09383474_1920.jpg');
 	}
+
+	.weather{
+		&__box{
+			flex-direction: row;
+			align-items: stretch;
+			justify-content: stretch;
+			max-width: 70%;
+			margin: 0 auto;
+		}
+		&__img{
+			width: 50%;
+
+		}
+		&__temperature-box{
+			margin: 0;
+		}
+
+		&__temperature-box, &__humidity-box, &__img-box{
+			justify-content: space-between;
+			width: calc(100%/3);
+		}
+	}
 }
 
 @media (min-width: 992px) {
@@ -640,6 +731,11 @@ body {
 			img {
 				height: 80%;
 			}
+		}
+	}
+	.weather{
+		&__box{
+
 		}
 	}
 }

@@ -51,6 +51,10 @@ const getWeather = () => {
          weatherImg.setAttribute('src', './dist/img/clouds.png')
          console.log('ok');
       } 
+		else if(idStatus >= 701 && idStatus <= 781){
+         weatherImg.setAttribute('src', './dist/img/mist.png')
+         console.log('ok');
+      } 
 	})
 }
 getWeather()

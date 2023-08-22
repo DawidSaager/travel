@@ -5,11 +5,13 @@ const weatherTemperature = document.querySelector('.weather__temperature')
 const weatherImg = document.querySelector('.weather__img')
 const weatherHumidity = document.querySelector('.weather__humidity')
 
+const API_LINK2 = 'https://api.openweathermap.org/data/2.5/forecast?q=poznań&appid=583e903792d6382b1760288bd0b3c4b5&units=metric'
+const API_LINK3 ='https://api.openweathermap.org/data/2.5/forecast?q=poznań&appid=583e903792d6382b1760288bd0b3c4b5&units=metric'
+
 const API_LINK = 'https://api.openweathermap.org/data/2.5/weather?q=poznań'
 const API_KEY = '&appid=583e903792d6382b1760288bd0b3c4b5'
 const API_UNITS ='&units=metric'
 
-//https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
 
 const openNavMobile = () => {
 	nav.classList.toggle('nav__items--active');
@@ -25,6 +27,7 @@ const openNavMobile = () => {
 
 const getWeather = () => {
 	const URL = API_LINK + API_KEY + API_UNITS
+   const URL_2 = API_LINK2
 	axios.get(URL).then(res => {
 		console.log(res.data);
 		const temp = res.data.main.temp
@@ -56,8 +59,23 @@ const getWeather = () => {
          console.log('ok');
       } 
 	})
+   axios.get(URL_2).then(res => {
+      const humidity = res.data.list[0].pop
+
+		weatherHumidity.textContent = humidity*100 + '%'
+
+   })
 }
 getWeather()
+
+const getWeather2 = () => {
+	const URL = API_LINK3
+	axios.get(URL).then(res => {
+		console.log(res.data);
+   }
+   )
+}
+getWeather2()
 
 
 burger.addEventListener('click', openNavMobile);

@@ -34,7 +34,7 @@ hr {
 }
 
 .section-text {
-	padding: 0 1.5em;
+	padding: 1em 1.5em;
 	text-align: center;
 	font-size: 1.4rem;
 }
@@ -53,4 +53,8 @@ hr {
 	border: 1px solid #fff;
 	box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.1);
 	font-size: 2rem;
+}
+
+.mobile-item{
+	display: none;
 }

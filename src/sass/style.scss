@@ -178,8 +178,8 @@ body {
 	}
 	&__btn {
 		background-color: colors.$main-color;
-		border-radius: 100px;
-		padding: 1em 1.8em;
+		border-radius: 20px;
+		padding: 1em 1.5em;
 		margin-top: 1em;
 		font-size: 1.4rem;
 		letter-spacing: 2px;
@@ -192,11 +192,14 @@ body {
 }
 
 .places {
+	// background-color: #f4a261;
 	&__items-box {
 		display: flex;
 		flex-direction: column;
 		flex-wrap: wrap;
 		margin: 1em 0;
+		// background-color: tomato;
+
 	}
 	&__item {
 		display: flex;
@@ -206,7 +209,7 @@ body {
 		height: 400px;
 		padding: 1em 0;
 		margin-bottom: 1.5em;
-		box-shadow: -1px 9px 31px -12px rgba(66, 68, 90, 1);
+		box-shadow: -1px 9px 31px -12px #264653;
 		&:nth-of-type(n+3){
 			display: none;
 		}
@@ -265,6 +268,7 @@ body {
 		margin-top: 3em;
 		background-color: colors.$white;
 		text-align: center;
+		box-shadow: -1px 9px 31px -12px #264653;
 	}
 
 	&__item-heading {
@@ -285,11 +289,11 @@ body {
 		margin: 0 auto;
 		margin-top: 1em;
 		padding: 1em 2em;
-		color: black;
+		color: colors.$main-color;
 		text-transform: uppercase;
 		font-weight: bold;
 		border-radius: 100px;
-		background-color: colors.$main-color;
+		// background-color: colors.$main-color;
 	}
 }
 
@@ -688,16 +692,16 @@ body {
 			flex-direction: row;
 			justify-content: flex-end;
 			height: 100%;
-			width: 100%;
+			// width: 50%;
 			transform: translateX(0);
 		}
 		&__item {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			padding: 0;
+			padding: 0 1em;
 			margin-bottom: 0rem;
-			width: 20%;
+			width: auto;
 			height: 100%;
 			font-size: 1.5rem;
 		}

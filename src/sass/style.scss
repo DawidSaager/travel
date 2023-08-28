@@ -249,7 +249,7 @@ body {
 		text-decoration: none;
 		text-transform: uppercase;
 		font-weight: bold;
-		color: colors.$main-color;
+		color: colors.$menu-color;
 	}
 }
 
@@ -288,7 +288,7 @@ body {
 		margin: 0 auto;
 		margin-top: 1em;
 		padding: 1em 2em;
-		color: colors.$main-color;
+		color: colors.$menu-color;
 		text-transform: uppercase;
 		font-weight: bold;
 		border-radius: 100px;
@@ -537,12 +537,13 @@ body {
 
 .header-offers {
 	height: 70vh;
-	&--zamek{
-			background-image: url(../img/zamek_640.jpg);
-		}
+	&--zamek {
+		background-image: url(../img/zamek_640.jpg);
 	}
-
-
+	&--domki-budnicze {
+		background-image: url(../img/budnicze_640.jpg);
+	}
+}
 
 .details {
 	&__option {
@@ -551,7 +552,7 @@ body {
 		justify-content: center;
 		align-items: stretch;
 	}
-	&__text{
+	&__text {
 		text-align: left;
 	}
 	&__img-box {
@@ -714,6 +715,8 @@ body {
 
 	.section-heading {
 		font-size: 3.5rem;
+		width: 80%;
+		margin: 0 auto;
 	}
 
 	.item-heading {
@@ -725,7 +728,6 @@ body {
 	}
 
 	.header {
-		
 		background-image: url('../img/header_1920.jpg');
 		&__btn {
 			padding: 1.2em 2em;
@@ -799,6 +801,10 @@ body {
 }
 
 @media (min-width: 992px) {
+	.section-heading {
+		width: 70%;
+		margin: 0 auto;
+	}
 	.nav {
 		&__items {
 			width: 90%;
@@ -887,6 +893,8 @@ body {
 @media (min-width: 1200px) {
 	.section-heading {
 		font-size: 3.7rem;
+		width: 60%;
+		margin: 0 auto;
 	}
 
 	.item-heading {

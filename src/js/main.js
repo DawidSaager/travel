@@ -1,12 +1,13 @@
 const burger = document.querySelector('.burger-btn');
 const nav = document.querySelector('.nav__items');
 const navItem = document.querySelectorAll('.nav__item');
+const weatherSection = document.querySelector('.weather')
 const weatherTemperature = document.querySelector('.weather__temperature')
 const weatherImg = document.querySelector('.weather__img')
 const weatherHumidity = document.querySelector('.weather__humidity')
 
 const API_LINK2 = 'https://api.openweathermap.org/data/2.5/forecast?q=poznań&appid=583e903792d6382b1760288bd0b3c4b5&units=metric'
-const API_LINK3 ='https://api.openweathermap.org/data/2.5/forecast?q=poznań&appid=583e903792d6382b1760288bd0b3c4b5&units=metric'
+
 
 const API_LINK = 'https://api.openweathermap.org/data/2.5/weather?q=poznań'
 const API_KEY = '&appid=583e903792d6382b1760288bd0b3c4b5'
@@ -29,7 +30,6 @@ const getWeather = () => {
 	const URL = API_LINK + API_KEY + API_UNITS
    const URL_2 = API_LINK2
 	axios.get(URL).then(res => {
-		console.log(res.data);
 		const temp = res.data.main.temp
 		const idStatus = res.data.weather[0].id
 		const humidity = res.data.main.humidity
@@ -45,18 +45,14 @@ const getWeather = () => {
          weatherImg.setAttribute('src', './dist/img/rain.png')
       } else if(idStatus >= 600 && idStatus <= 622){
          weatherImg.setAttribute('src', './dist/img/snow.png')
-         console.log('ok');
       } else if(idStatus === 800){
          weatherImg.setAttribute('src', './dist/img/sun.png')
-         console.log('ok');
       } 
 		else if(idStatus >= 801 && idStatus <= 804){
          weatherImg.setAttribute('src', './dist/img/clouds.png')
-         console.log('ok');
       } 
 		else if(idStatus >= 701 && idStatus <= 781){
          weatherImg.setAttribute('src', './dist/img/mist.png')
-         console.log('ok');
       } 
 	})
    axios.get(URL_2).then(res => {
@@ -66,16 +62,9 @@ const getWeather = () => {
 
    })
 }
+
+if(document.body.closest('.weatherAPI')){
 getWeather()
-
-const getWeather2 = () => {
-	const URL = API_LINK3
-	axios.get(URL).then(res => {
-		console.log(res.data);
-   }
-   )
 }
-getWeather2()
-
 
 burger.addEventListener('click', openNavMobile);

@@ -536,12 +536,20 @@ body {
 // STRONA PRODUKTU
 
 .header-offers {
-	height: 70vh;
+	height: 90vh;
+	background-position: bottom;
+	background-size: cover;
 	&--zamek {
 		background-image: url(../img/zamek_640.jpg);
 	}
 	&--domki-budnicze {
 		background-image: url(../img/budnicze_640.jpg);
+	}
+	&--palmiarnia{
+		background-image: url(../img/palmiarnia.jpg);
+	}
+	&--ostrow{
+		background-image: url(../img/ostrow.jpg);
 	}
 }
 
@@ -735,6 +743,20 @@ body {
 			font-size: 1.4rem;
 		}
 	}
+	.header-offers {
+		&--zamek {
+			background-image: url(../img/zamek_640.jpg);
+		}
+		&--domki-budnicze {
+			background-image: url(../img/budnicze_640.jpg);
+		}
+		&--palmiarnia{
+			background-image: url(../img/palmiarnia.jpg);
+		}
+		&--ostrow{
+			background-image: url(../img/ostrow.jpg);
+		}
+	}
 
 	.package {
 		&__slider-box {
@@ -907,7 +929,7 @@ body {
 
 	.header {
 		&__heading {
-			font-size: 7rem;
+			font-size: 6rem;
 			width: 80%;
 		}
 	}

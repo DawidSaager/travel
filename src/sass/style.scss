@@ -319,6 +319,7 @@ body {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		
 	}
 	&__img {
 		width: 30%;
@@ -342,6 +343,7 @@ body {
 		text-transform: uppercase;
 		font-size: 2rem;
 		margin-bottom: 0.5em;
+		text-align: center;
 	}
 }
 
@@ -551,6 +553,9 @@ body {
 	&--ostrow{
 		background-image: url(../img/ostrow.jpg);
 	}
+	&--stary-browar{
+		background-image: url(../img/browar_1200.jpg);
+	}
 }
 
 .details {
@@ -756,6 +761,9 @@ body {
 		&--ostrow{
 			background-image: url(../img/ostrow.jpg);
 		}
+		&--stary-browar{
+			background-image: url(../img/browar_1200.jpg);
+		}
 	}
 
 	.package {
@@ -799,7 +807,6 @@ body {
 			flex-direction: row;
 			align-items: stretch;
 			justify-content: stretch;
-			max-width: 70%;
 			margin: 0 auto;
 		}
 		&__img {
@@ -908,6 +915,7 @@ body {
 	}
 	.weather {
 		&__box {
+			max-width: 70%;
 		}
 	}
 }
